@@ -7,6 +7,12 @@ import { Providers } from "./providers";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 
+// Font Awesome 설정 시작
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+// Font Awesome 설정 끝
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
