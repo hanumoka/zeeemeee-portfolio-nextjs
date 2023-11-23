@@ -62,9 +62,8 @@ export default function DartModeToggleButton() {
   return (
     <>
       <button
-        className="
-                    inline-flex items-center
-               border-0 py-1 px-3 rounded text-base mt-4 md:mt-0
+        className="inline-flex items-center
+                border-0 py-1 px-3 rounded text-base mt-4 md:mt-0
                 focus:outline-none
                 bg-gray-100
                 hover:bg-gray-50
@@ -77,7 +76,6 @@ export default function DartModeToggleButton() {
         type="button"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
-        {/* 라이트 모드 */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="visible dark:invisible dark:h-0 dark:w-0 h-5 w-5"
@@ -91,7 +89,6 @@ export default function DartModeToggleButton() {
           />
         </svg>
 
-        {/* 다크모드 */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="visible dark:visible dark:h-5 dark:w-5 h-0 w-0"
@@ -102,7 +99,7 @@ export default function DartModeToggleButton() {
         </svg>
       </button>
 
-      <button
+      {/* <button
         className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
         onClick={() => {
           setTheme(theme === "light" ? "dark" : "light");
@@ -117,8 +114,9 @@ export default function DartModeToggleButton() {
             <FontAwesomeIcon icon={faMoon} />
           </>
         )}
-      </button>
+      </button> */}
     </>
+
     // <>
     //   <button
     //     className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
