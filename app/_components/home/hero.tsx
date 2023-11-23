@@ -8,7 +8,7 @@ export default function Hero() {
         <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
           안녕하세요 hanumoka 입니다.
           <br className="hidden lg:inline-block" />
-          지미 이게 뭐라고
+          지미 이게 뭐라고 3
         </h1>
         <p className="mb-8 leading-relaxed">집에 가고 싶다.</p>
         <div className="flex justify-center">
