@@ -12,10 +12,7 @@ export default function Hero() {
         </h1>
         <p className="mb-8 leading-relaxed">집에 가고 싶다.</p>
         <div className="flex justify-center">
-          <Link
-            href="/projects"
-            className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-          >
+          <Link href="/projects" className="link-project">
             프로젝트 보러가기
           </Link>
         </div>
