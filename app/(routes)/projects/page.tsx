@@ -125,10 +125,14 @@ interface NotionResponse {
   };
 }
 
+interface ErrorWithMessage {
+  message: string;
+}
+
 export default function Projects() {
   const [data, setData] = useState<NotionPage[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<ErrorWithMessage | null>(null);
 
   useEffect(() => {
     // 외부 데이터 소스로부터 데이터를 가져옵니다.
