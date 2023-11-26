@@ -8,30 +8,57 @@ export default function ProjectItem({ data }: { data: any }) {
   const start = data.properties.WorkPeriod.date.start;
   const end = data.properties.WorkPeriod.date.end;
 
-  const calculatedPeriod = (start, end) => {
+  const calculatedPeriod = (start: string, end: string): number => {
     const startDateStringArray = start.split("-");
     const endDateStringArray = end.split("-");
 
-    var startDate = new Date(
-      startDateStringArray[0],
-      startDateStringArray[1],
-      startDateStringArray[2]
+    // 월은 0부터 시작하므로 1을 빼줘야 합니다. 또한 `parseInt`를 사용하여 문자열을 숫자로 변환합니다.
+    const startDate = new Date(
+      parseInt(startDateStringArray[0], 10),
+      parseInt(startDateStringArray[1], 10) - 1, // 월(month)은 0부터 시작합니다.
+      parseInt(startDateStringArray[2], 10)
     );
-    var endDate = new Date(
-      endDateStringArray[0],
-      endDateStringArray[1],
-      endDateStringArray[2]
+    const endDate = new Date(
+      parseInt(endDateStringArray[0], 10),
+      parseInt(endDateStringArray[1], 10) - 1, // 월(month)은 0부터 시작합니다.
+      parseInt(endDateStringArray[2], 10)
     );
 
     console.log(`startDate: ${startDate}`);
     console.log(`endDate: ${endDate}`);
 
-    const diffInMs = Math.abs(endDate - startDate);
+    // `.getTime()` 메소드를 사용하여 날짜를 밀리초 단위의 타임스탬프로 변환합니다.
+    const diffInMs = Math.abs(endDate.getTime() - startDate.getTime());
     const result = diffInMs / (1000 * 60 * 60 * 24);
 
     console.log(`기간 : ${result}`);
     return result;
   };
+
+  // const calculatedPeriod = (start: string, end: string) => {
+  //   const startDateStringArray = start.split("-");
+  //   const endDateStringArray = end.split("-");
+
+  //   const startDate = new Date(
+  //     startDateStringArray[0],
+  //     startDateStringArray[1],
+  //     startDateStringArray[2]
+  //   );
+  //   const endDate = new Date(
+  //     endDateStringArray[0],
+  //     endDateStringArray[1],
+  //     endDateStringArray[2]
+  //   );
+
+  //   console.log(`startDate: ${startDate}`);
+  //   console.log(`endDate: ${endDate}`);
+
+  //   const diffInMs = Math.abs(endDate - startDate);
+  //   const result = diffInMs / (1000 * 60 * 60 * 24);
+
+  //   console.log(`기간 : ${result}`);
+  //   return result;
+  // };
 
   return (
     <div className="project-card">
