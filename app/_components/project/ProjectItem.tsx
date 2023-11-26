@@ -1,10 +1,16 @@
 import Image from "next/image";
 
+// Tag 객체에 대한 인터페이스 정의
+interface Tag {
+  id: string;
+  name: string;
+}
+
 export default function ProjectItem({ data }: { data: any }) {
   const title = data.properties.Name.title[0].plain_text;
   const descrption = data.properties.Descrption.rich_text[0].plain_text;
   const imgSrc = data.cover.external.url;
-  const tags = data.properties.Tags.multi_select;
+  const tags: Tag[] = data.properties.Tags.multi_select;
   const start = data.properties.WorkPeriod.date.start;
   const end = data.properties.WorkPeriod.date.end;
 
