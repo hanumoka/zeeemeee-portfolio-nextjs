@@ -8,7 +8,7 @@ interface Tag {
 
 export default function ProjectItem({ data }: { data: any }) {
   const title = data.properties.Name.title[0].plain_text;
-  const descrption = data.properties.Descrption.rich_text[0].plain_text;
+  const description = data.properties.Description.rich_text[0].plain_text;
   const imgSrc = data.cover.external.url;
   const tags: Tag[] = data.properties.Tags.multi_select;
   const start = data.properties.WorkPeriod.date.start;
@@ -81,7 +81,7 @@ export default function ProjectItem({ data }: { data: any }) {
 
       <div className="p-4 flex flex-col">
         <h1 className="text-2xl font-bold">{title}</h1>
-        <h3 className="mt-4 text-xl">{descrption}</h3>
+        <h3 className="mt-4 text-xl">{description}</h3>
         {/* <a href={github}>깃허브 바로가기</a> */}
         {/* <a href={youtube}>유튜브 시연영상 보러가기</a> */}
         <p className="my-1 ">
