@@ -36,8 +36,7 @@ interface NotionCover {
 
 interface NotionProperties {
   Tags: NotionMultiSelectProperty;
-  WorkPeriod: NotionDateProperty;
-  GitHubLink: NotionUrlProperty;
+  Date: NotionDateProperty;
   Description: NotionRichTextProperty;
   Name: NotionTitleProperty;
   // 추가적으로 필요한 다른 프로퍼티 타입들
@@ -188,7 +187,7 @@ export default function Projects() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <h1 className="text-4xl font-bold sm:text-6xl">
-          총 프로젝트 :<span className="pl-4 text-blue-500">{data.length}</span>
+          총 포스트 :<span className="pl-4 text-blue-500">{data.length}</span>
         </h1>
 
         <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2">

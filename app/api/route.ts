@@ -5,7 +5,7 @@ export async function POST(request: Request) {
   console.log("Notion Datagbase query POST...");
 
   const response = await fetch(
-    `https://api.notion.com/v1/databases/${config.NOTION_DATABASE_ID}/query`,
+    `https://api.notion.com/v1/databases/${config.NOTION_PORTFOLIO_DATABASE_ID}/query`,
     {
       method: "POST", // 또는 'POST', 'PUT' 등
       headers: {
