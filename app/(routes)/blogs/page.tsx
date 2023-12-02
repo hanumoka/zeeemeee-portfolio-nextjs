@@ -1,5 +1,5 @@
 "use client";
-import ProjectItem from "@/app/_components/project/ProjectItem";
+import BlogItem from "@/app/_components/blog/BlogItem";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 
@@ -136,7 +136,7 @@ export default function Projects() {
   useEffect(() => {
     // 외부 데이터 소스로부터 데이터를 가져옵니다.
     fetch(
-      "/api",
+      "/api/blog",
 
       {
         method: "POST", // 또는 'POST', 'PUT' 등
@@ -192,7 +192,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2">
           {data.map((item: NotionPage) => (
-            <ProjectItem key={item.id} data={item} />
+            <BlogItem key={item.id} data={item} />
           ))}
         </div>
       </div>

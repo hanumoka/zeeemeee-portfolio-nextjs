@@ -137,7 +137,7 @@ export default function Projects() {
   useEffect(() => {
     // 외부 데이터 소스로부터 데이터를 가져옵니다.
     fetch(
-      "/api",
+      "/api/portfolio",
 
       {
         method: "POST", // 또는 'POST', 'PUT' 등
